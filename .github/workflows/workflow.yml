@@ -10,11 +10,11 @@ on:
 jobs:
   # Lint the Bicep file.
   lint:
-    uses: YOUR_GITHUB_USERNAME/toy-website-environments/.github/workflows/lint.yml@main
+    uses: jozoslejko/toy-website-environments/.github/workflows/lint.yml@main
 
   # Deploy to the test environment.
   deploy-test:
-    uses: YOUR_GITHUB_USERNAME/toy-website-environments/.github/workflows/deploy.yml@main
+    uses: jozoslejko/toy-website-environments/.github/workflows/deploy.yml@main
     needs: lint
     with:
       environmentType: Test
@@ -24,7 +24,7 @@ jobs:
 
   # Deploy to the production environment.
   deploy-production:
-    uses: YOUR_GITHUB_USERNAME/toy-website-environments/.github/workflows/deploy.yml@main
+    uses: jozoslejko/toy-website-environments/.github/workflows/deploy.yml@main
     needs: deploy-test
     with:
       environmentType: Production
